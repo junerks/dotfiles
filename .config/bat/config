@@ -1,0 +1,8 @@
+# --theme="gruvbox-dark"
+--theme="Catppuccin Mocha"
+
+--style="full"
+
+--color=always
+
+--italic-text=always

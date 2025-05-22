@@ -1,0 +1,68 @@
+Anatomy of a motion:
+Command - Count - Motion
+
+Commands:
+v: select
+C-v: vertical select
+d: delete
+y: yank (copy)
+p: paste
+c: change (delete and insert)
+
+Motions:
+    Horizontal:
+    h: left
+    j: down
+    k: up
+    l: right
+
+    f: forward on character specified
+    F: backward on character specified
+    t: forward to character specified
+    T: backward to character specified
+        ,: previous occurence
+        ;: next occurence
+
+    >: indent line
+    <: undo indent line
+
+    Vertical:
+    i: insert
+    a: insert at the right of the cursor
+    I: insert at the start of the cursor
+    A: insert at the end of line
+    o: insert in line below
+    O: insert in line above
+
+    0: place cursor at the start of the whole line
+    _: place cursor at the start of line
+    $: place cursor at the end of line
+
+    {: place cursor up a paragraph
+    }: place cursor down a paragraph
+
+    gg: place cursor at the start of file
+    G: place cursor at the end of file
+
+    C-d: place cursor half a page up
+    C-d: place cursor half a page down
+
+Search:
+/: search next occurence of word
+?: search last occurence of word
+*: search next occurence of word in the cursor
+#: search last occurence of word in the cursor
+    n: next occurence
+    N: previous occurence
+
+Advanced:
+v/d/y/c 
+    i<_>: <command> everything inside the next _ in line
+    a<_>: <command> everything inside and around the next _ in line
+    iw: <command> text under the cursor
+    iW: <command> all contigous text under the cursor
+    ip: <command> inside the paragraph the cursor is in
+    ap: <command> inside and around the paragraph the cursor is in
+
+Tips:
+Faster to V<command> than double tap (VY > yy)

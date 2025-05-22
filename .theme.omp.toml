@@ -1,0 +1,62 @@
+version = 3
+
+[upgrade]
+source = 'cdn'
+interval = '168h'
+auto = false
+notice = false
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+  [[blocks.segments]]
+  template = '╭── {{.Icon}}'
+  foreground = 'cyan'
+  type = 'os'
+
+  [[blocks.segments]]
+  type = 'path'
+  template = '  at 󰉋  {{.Path}}'
+  foreground = 'cyan'
+
+    [blocks.segments.properties]
+    style = 'full'
+
+[[blocks.segments]]
+template = ':: {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }} '
+foreground = '#F1502F'
+type = 'git'
+style = 'plain'
+
+  [blocks.segments.properties]
+  fetch_status = true
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = '╰─── $ '
+
+    foreground = 'lightGreen'
+    type = 'status'
+    style = 'powerline'
+    foreground_templates = [
+      "{{if gt .Code 0}}red{{end}}",
+      "{{if eq .Code 0}}green{{end}}",
+    ]
+
+    [blocks.segments.properties]
+    always_enabled = true
+
+
+[transient_prompt]
+  foreground_templates = [
+    "{{if gt .Code 0}}red{{end}}",
+    "{{if eq .Code 0}}green{{end}}",
+  ]
+  background = 'transparent'
+  template = '➜ '
