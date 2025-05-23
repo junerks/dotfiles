@@ -38,7 +38,6 @@ zstyle ':completion:*' menu no
 alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
 alias grep='grep --color=auto'
-alias vi='nvim'
 alias vim='nvim'
 alias fzf='fzf --style=full --preview "bat {}" --bind "enter:become(nvim {+})"'
 alias cat='bat'
