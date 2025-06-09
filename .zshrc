@@ -56,3 +56,5 @@ alias man='batman'
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(oh-my-posh init zsh --config ~/.theme.omp.toml)"
+
+fastfetch
