@@ -1,34 +1,67 @@
 return {
 	{
 		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
+		opts = {
+			ensure_installed = {
+				-- lua
+				"stylua",
+
+				-- python
+				"mypy",
+				"pyright",
+				"ruff",
+				"black",
+				"isort",
+
+				-- c
+				"clangd",
+				"clang-format",
+
+				-- web dev
+				"eslint_d",
+				"prettier",
+			},
+		},
+
+		config = function(_, opts)
+			local mason_registry = require("mason-registry")
+			local mason = require("mason")
+			mason.setup(opts)
+
+			vim.api.nvim_create_user_command("MasonInstallAll", function()
+				vim.cmd("MasonInstall " .. table.concat(opts.ensure_installed, " "))
+			end, {})
+
+			-- Check if all tools are installed
+			local missing = {}
+			for _, tool in ipairs(opts.ensure_installed) do
+				local ok, pkg = pcall(mason_registry.get_package, tool)
+				if ok and not pkg:is_installed() then
+					table.insert(missing, tool)
+				end
+			end
+
+			if #missing > 0 then
+				vim.cmd("MasonInstall " .. table.concat(missing, " "))
+			end
 		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = {
-					-- lua
-					"lua_ls",
+		opts = {
+			ensure_installed = {
+				-- lua
+				"lua_ls",
 
-					-- python
-					"pyright",
+				-- web dev
+				"html",
+				"cssls",
+				"ts_ls",
 
-					-- c
-					"clangd",
-
-					-- web dev
-					"html",
-					"cssls",
-					"ts_ls",
-
-					-- json
-					"jsonls",
-				},
-			})
-		end,
+				-- json
+				"jsonls",
+			},
+		},
 	},
 	{
 		"neovim/nvim-lspconfig",

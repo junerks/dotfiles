@@ -1,32 +1,37 @@
 return {
-	"nvimtools/none-ls.nvim",
-	dependencies = {
-		"nvimtools/none-ls-extras.nvim",
-	},
+    "nvimtools/none-ls.nvim",
+    dependencies = {
+        "nvimtools/none-ls-extras.nvim",
+    },
 
-	event = "VeryLazy",
-	config = function()
-		local null_ls = require("null-ls")
+    event = "VeryLazy",
+    config = function()
+        local null_ls = require("null-ls")
 
-		null_ls.setup({
-			sources = {
-				-- Lua
-				null_ls.builtins.formatting.stylua,
+        null_ls.setup({
+            sources = {
+                -- Lua
+                null_ls.builtins.formatting.stylua,
 
-				-- Python
-				null_ls.builtins.formatting.black,
-				null_ls.builtins.formatting.isort,
+                -- Python
+                null_ls.builtins.diagnostics.mypy,
 
-				-- C/C++
-				null_ls.builtins.formatting.clang_format,
+                require("none-ls.diagnostics.ruff").with({
+                    extra_args = { "--no-config" },
+                }),
+                null_ls.builtins.formatting.black,
+                null_ls.builtins.formatting.isort,
 
-				-- Web
-				require("none-ls.code_actions.eslint_d"),
-				null_ls.builtins.formatting.prettier.with({
-					filetypes = { "html", "css", "javascript", "typescript", "json" },
-					extra_args = { "--tab-width", "2" },
-				}),
-			},
-		})
-	end,
+                -- C/C++
+                null_ls.builtins.formatting.clang_format,
+
+                -- Web
+                require("none-ls.code_actions.eslint_d"),
+                null_ls.builtins.formatting.prettier.with({
+                    filetypes = { "html", "css", "javascript", "typescript", "json" },
+                    extra_args = { "--tab-width", "2" },
+                }),
+            },
+        })
+    end,
 }
