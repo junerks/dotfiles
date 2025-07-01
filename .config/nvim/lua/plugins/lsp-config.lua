@@ -1,47 +1,68 @@
 return {
-    {
-        "williamboman/mason.nvim",
-        config = function()
-            require("mason").setup()
-        end,
-    },
-    {
-        "williamboman/mason-lspconfig.nvim",
-        config = function()
-            require("mason-lspconfig").setup({
-                ensure_installed = {
-                    "lua_ls",  -- lua
-                    "clangd",  -- c
-                    "pyright", -- python
-                    "jsonls",  -- json
-                },
-            })
-        end,
-    },
-    {
-        "neovim/nvim-lspconfig",
-        config = function()
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+		end,
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					-- lua
+					"lua_ls",
 
-            local lspconfig = require("lspconfig")
+					-- python
+					"pyright",
 
-            lspconfig.lua_ls.setup({
-                capabilities = capabilites,
-            })
-            lspconfig.clangd.setup({
-                capabilities = capabilites,
-            })
-            lspconfig.pyright.setup({
-                capabilities = capabilites,
-            })
-            lspconfig.jsonls.setup({
-                capabilities = capabilites,
-            })
+					-- c
+					"clangd",
 
-            vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-            vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-            vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-            vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
-        end,
-    },
+					-- web dev
+					"html",
+					"cssls",
+					"ts_ls",
+
+					-- json
+					"jsonls",
+				},
+			})
+		end,
+	},
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+			local lspconfig = require("lspconfig")
+
+			lspconfig.lua_ls.setup({
+				capabilities = capabilites,
+			})
+			lspconfig.clangd.setup({
+				capabilities = capabilites,
+			})
+			lspconfig.pyright.setup({
+				capabilities = capabilites,
+			})
+			lspconfig.html.setup({
+				capabilities = capabilites,
+			})
+			lspconfig.cssls.setup({
+				capabilities = capabilites,
+			})
+			lspconfig.ts_ls.setup({
+				capabilities = capabilites,
+			})
+			lspconfig.jsonls.setup({
+				capabilities = capabilites,
+			})
+
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
+		end,
+	},
 }

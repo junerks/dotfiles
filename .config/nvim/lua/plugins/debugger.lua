@@ -44,6 +44,12 @@ return {
 		}
 		dap.configurations.cpp = dap.configurations.c
 
+		local sign = vim.fn.sign_define
+
+		sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
+		sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
+		sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = "" })
+
 		local dapui = require("dapui")
 		dapui.setup()
 

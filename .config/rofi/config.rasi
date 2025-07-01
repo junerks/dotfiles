@@ -1,6 +1,6 @@
 configuration {
 	modes: "window,run,drun";
-	font: "JetBrainsMono Nerd Font 12";
+	font: "JetBrainsMono Nerd Font 13";
 	show-icons: true;
 	icon-theme: "Adwaita";
 	display-window: "Windows: ";
@@ -10,9 +10,9 @@ configuration {
 
 @theme "/dev/null"
 * {
-    bg: #1e1e2e33;
-    bg-selected: #1e1e2e33;
-    bg-alt: #181825;
+    bg: #1e1e2e80;
+    bg-selected: #b4befe33;
+    bg-alt: #b4befe1a;
 
     fg: #cdd6f4;
     fg-alt: #cba6f7;
@@ -29,7 +29,9 @@ element {
 element selected{
     text-color: @fg-alt;
     background-color: @bg-selected;
-    border-radius: 20px;
+    border: 1;
+    border-radius: 15px; 
+    border-color: @fg-alt;
 }
 element-text {
     text-color: inherit;
@@ -38,36 +40,43 @@ element-text {
 }
 element-icon {
     size: 30;
+    vertical-align: 0.5;
     background-color: transparent;
 }
 window {
     width: 45%;
-    border: 1;
-    border-color: @fg-alt;
-    border-radius: 15px 15px 15px 15px;
+    background-color: @bg;
     transparency: "real";
+    border: 1;
+    border-radius: 15px; 
+    border-color: @fg-alt;
 }
 mainbox {
   children: [ inputbar, listview ];
     background-color: transparent;
 }
 listview {
-    lines: 8;
-    padding: 10px;
+    lines: 7;
+    padding: 20px 30px;
+    background-color: transparent;
 }
 prompt {
-    font: "JetBrainsMono Nerd Font Bold 15";
+    font: "JetBrainsMono Nerd Font Bold 13";
     text-color: @fg;
-    background-color: transparent;
+    background-color: @bg-alt;
+    padding: 25px 10px;
+    border-radius: 15px 0px 0px 15px;
 }
 entry {
-    font: "JetBrainsMono Nerd Font Italic 15";
+    font: "JetBrainsMono Nerd Font Italic 13";
     text-color:        @fg-alt;
-    background-color: transparent;
+    background-color: @bg-alt;
+    padding: 25px 0px;
+    border-radius: 0px 15px 15px 0px;
 }
 inputbar {
-    padding:    30px;
-    background-color: @bg-alt;
+    padding: 30px;
+    background-color: transparent;
     spacing:    0px ;
     text-color: @fg;
     children:   [ "prompt","entry" ];

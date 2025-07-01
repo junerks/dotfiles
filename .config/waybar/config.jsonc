@@ -1,5 +1,9 @@
 {
-    "layer": "bot",
+    "layer": "top",
+    "output": [
+        "eDP-1",
+        "HDMI-A-1"
+    ],
     "position": "top",
     "height": 0,
     "spacing": 0,
@@ -8,10 +12,11 @@
     "margin-right": 0,
     "margin-left": 0,
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "hyprland/window"
     ],
     "modules-center": [
-        "hyprland/window"
+        "clock"
     ],
     "modules-right": [
         "pulseaudio",
@@ -22,15 +27,15 @@
         "power-profiles-daemon",
         "hyprland/language",
         "tray",
-        "clock",
         "custom/power"
     ],
     "tray": {
         "spacing": 10
     },
     "clock": {
-        "format": "{:%Y-%m-%d}",
-        "tooltip": false
+        "format": "{:%a %d %b %Y | %H:%M}  ",
+        "tooltip-format": "{calendar}",
+        "on-click": "gnome-calendar"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -103,15 +108,8 @@
         "tooltip": false
     },
     "custom/power": {
-        "format": "⏻ ",
+        "format": " ⏻ ",
         "tooltip": false,
-        "menu": "on-click",
-        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-        "menu-actions": {
-            "shutdown": "shutdown",
-            "reboot": "reboot",
-            "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate"
-        }
+        "on-click": "~/.local/bin/powermenu"
     }
 }

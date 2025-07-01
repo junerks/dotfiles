@@ -31,7 +31,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "120"
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-    callback = function()
-        vim.lsp.buf.format()
-    end,
+	callback = function()
+		vim.lsp.buf.format()
+	end,
 })
