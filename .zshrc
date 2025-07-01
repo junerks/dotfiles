@@ -19,6 +19,8 @@ function y() {
 }
 
 export PATH="$HOME/.local/bin":$PATH
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 # Plugins
 zinit light zsh-users/zsh-syntax-highlighting
