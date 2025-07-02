@@ -48,7 +48,7 @@ window {
     background-color: @bg;
     transparency: "real";
     border: 1;
-    border-radius: 15px; 
+    border-radius: 25px; 
     border-color: @fg-alt;
 }
 mainbox {
@@ -64,7 +64,7 @@ prompt {
     font: "JetBrainsMono Nerd Font Bold 13";
     text-color: @fg;
     background-color: @bg-alt;
-    padding: 25px 10px;
+    padding: 25px 0px 0px 25px;
     border-radius: 15px 0px 0px 15px;
 }
 entry {
