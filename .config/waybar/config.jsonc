@@ -5,12 +5,7 @@
         "HDMI-A-1"
     ],
     "position": "top",
-    "height": 0,
-    "spacing": 0,
-    "margin-bottom": 0,
-    "margin-top": 8,
-    "margin-right": 0,
-    "margin-left": 0,
+    "margin-top": 5,
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/window"
@@ -19,32 +14,86 @@
         "clock"
     ],
     "modules-right": [
+        "bluetooth",
         "pulseaudio",
         "network",
+        "backlight",
         "memory",
         "cpu",
         "battery",
+        "tray",
         "power-profiles-daemon",
         "hyprland/language",
-        "tray",
+        "custom/night-mode",
         "custom/power"
     ],
-    "tray": {
-        "spacing": 10
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            //"active": "",
+            "urgent": "!",
+            "1": "⼀",
+            "2": "⼆",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十"
+        },
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "icon": true
     },
     "clock": {
-        "format": "{:%a %d %b %Y | %H:%M}  ",
+        "format": "{:%R} 󱑂",
+        "format-alt": "{:%A, %B %d, %Y | %R} 󱑂",
         "tooltip-format": "{calendar}",
-        "on-click": "gnome-calendar"
+        "on-click-right": "gnome-calendar"
+    },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂯 connected",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "on-click": "~/.local/bin/toggle-bluetooth",
+        "on-click-right": "blueman-manager"
+    },
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": " {volume}%",
+        "format-muted": " {volume}%",
+        "format-bluetooth": "󰂯  {volume}%",
+        "format-bluetooth-muted": "󰂯  {volume}%",
+        "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol"
+    },
+    "network": {
+        "interval": 5,
+        "format-wifi": " {icon}{signalStrength}%",
+        "tooltip-format-wifi": "{essid}\n{bandwidthDownBits}",
+        "format-ethernet": " {bandwidthDownBits}",
+        "format-disconnected": "Disconnected ",
+        "on-click": "kitty nmtui"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": "󰖨",
+        "on-click": "~/.local/bin/toggle-night-mode",
+        "scroll-step": 5
+    },
+    "memory": {
+        "format": "{}% "
     },
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
     },
-    "memory": {
-        "format": "{}% "
-    },
     "battery": {
+        "interval": 5,
         "states": {
             "warning": 30,
             "critical": 15
@@ -63,9 +112,12 @@
         ],
         "tooltip": false
     },
+    "tray": {
+        "icon-size": 24
+    },
     "power-profiles-daemon": {
         "format": "{icon}",
-        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip-format": "Power profile: {profile}",
         "tooltip": true,
         "format-icons": {
             "default": "",
@@ -74,41 +126,18 @@
             "power-saver": ""
         }
     },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "on-click": "pavucontrol"
-    },
     "hyprland/language": {
-        "format": "{flag}",
+        "format": "{}",
+        "format-en": "EN",
+        "format-es": "ES",
+        "on-click": "hyprctl switchxkblayout all next"
+    },
+    "custom/night-mode": {
+        "format": "",
         "tooltip": false
     },
     "custom/power": {
-        "format": " ⏻ ",
+        "format": "⏻",
         "tooltip": false,
         "on-click": "~/.local/bin/powermenu"
     }

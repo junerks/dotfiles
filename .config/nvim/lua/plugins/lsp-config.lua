@@ -8,18 +8,21 @@ return {
 
 				-- python
 				"mypy",
-				"pyright",
-				"ruff",
 				"black",
 				"isort",
 
 				-- c
-				"clangd",
 				"clang-format",
 
 				-- web dev
 				"eslint_d",
 				"prettier",
+
+				-- c#
+				"csharpier",
+
+				-- gdscript
+				"gdtoolkit",
 			},
 		},
 
@@ -53,6 +56,16 @@ return {
 				-- lua
 				"lua_ls",
 
+				-- c#
+				"omnisharp",
+
+				-- c
+				"clangd",
+
+				-- python
+				"pyright",
+				"ruff",
+
 				-- web dev
 				"html",
 				"cssls",
@@ -73,6 +86,19 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilites,
 			})
+			lspconfig.omnisharp.setup({
+				cmd = { "Omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
+				root_dir = lspconfig.util.root_pattern("*.csproj", "*.sln"),
+				settings = {
+					FormattingOptions = {
+						EnableEditorConfigSupport = true,
+					},
+					Sdk = {
+						IncludePrereleases = true,
+					},
+				},
+				capabilities = capabilities,
+			})
 			lspconfig.clangd.setup({
 				capabilities = capabilites,
 			})
@@ -89,6 +115,9 @@ return {
 				capabilities = capabilites,
 			})
 			lspconfig.jsonls.setup({
+				capabilities = capabilites,
+			})
+			lspconfig.gdscript.setup({
 				capabilities = capabilites,
 			})
 

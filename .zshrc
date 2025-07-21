@@ -61,6 +61,7 @@ alias fzf='fzf --style=full --preview "bat {}" --bind "enter:become(nvim {+})"'
 alias cat='bat'
 alias rg='batgrep'
 alias man='batman'
+alias pureref='QT_QPA_PLATFORM=xcb PureRef'
 
 # Shell integrations
 eval "$(fzf --zsh)"
