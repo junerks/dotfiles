@@ -70,3 +70,7 @@ eval "$(oh-my-posh init zsh --config ~/.theme.omp.toml)"
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 fastfetch
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

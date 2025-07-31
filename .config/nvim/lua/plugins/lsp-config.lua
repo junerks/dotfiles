@@ -70,6 +70,7 @@ return {
 				"html",
 				"cssls",
 				"ts_ls",
+				"angularls",
 
 				-- json
 				"jsonls",
@@ -116,6 +117,28 @@ return {
 			})
 			lspconfig.jsonls.setup({
 				capabilities = capabilites,
+			})
+			lspconfig.angularls.setup({
+				cmd = {
+					"/home/edgar/.local/share/nvim/mason/bin/ngserver",
+					"--stdio",
+					"--tsProbeLocations",
+					"/home/edgar/dev/web/strapi-solvex/frontend/node_modules",
+					"--ngProbeLocations",
+					"/home/edgar/dev/web/strapi-solvex/frontend/node_modules",
+				},
+				on_new_config = function(new_config, new_root_dir)
+					local nm = new_root_dir .. "/node_modules"
+					new_config.cmd = {
+						"/home/edgar/.local/share/nvim/mason/bin/ngserver",
+						"--stdio",
+						"--tsProbeLocations",
+						nm,
+						"--ngProbeLocations",
+						nm,
+					}
+				end,
+				root_dir = lspconfig.util.root_pattern("angular.json", "project.json"),
 			})
 			lspconfig.gdscript.setup({
 				capabilities = capabilites,

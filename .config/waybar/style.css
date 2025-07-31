@@ -13,7 +13,7 @@ window#waybar {
 }
 
 tooltip {
-  background: rgba(30, 30, 46, 0.8);
+  background: rgba(30, 30, 46, 0.1);
 }
 
 #workspaces,
@@ -30,7 +30,7 @@ tooltip {
 #language,
 #custom-night-mode,
 #custom-power {
-  background-color: rgba(30, 30, 46, 0.9);
+  background-color: rgba(30, 30, 46, 0.8);
 }
 
 #workspaces button:hover,
@@ -62,10 +62,10 @@ tooltip {
 }
 
 #window {
+  background-color: rgba(30, 30, 46, 0.4);
   font-style: italic;
-  border-radius: 0px;
-  border-bottom: 1px solid #b4befe;
   margin: 0px 30px;
+  padding: 0px 20px;
 }
 
 window#waybar.empty #window {
