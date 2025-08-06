@@ -18,7 +18,7 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-export PATH="$HOME/.local/bin":$PATH
+export PATH=$PATH:"$HOME/.local/bin"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
@@ -74,3 +74,10 @@ fastfetch
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# fnm
+FNM_PATH="/home/edgar/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
