@@ -1,7 +1,7 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: JetBrains Mono Nerd Font Propo;
-  font-size: 14px;
+  font-size: 12px;
   border-radius: 20px;
   border: none;
   color: #cdd6f4;
@@ -64,7 +64,7 @@ tooltip {
 #window {
   background-color: rgba(30, 30, 46, 0.4);
   font-style: italic;
-  margin: 0px 30px;
+  margin: 0px 20px;
   padding: 0px 20px;
 }
 
@@ -104,7 +104,7 @@ window#waybar.empty #window {
 #pulseaudio {
   color: #f2cdcd;
   border-radius: 20px 0px 0px 20px;
-  padding-left: 15px;
+  padding-left: 10px;
   border-right: none;
 }
 
@@ -127,14 +127,14 @@ window#waybar.empty #window {
 #backlight {
   color: #f9e2af;
   border-radius: 0px 20px 20px 0px;
-  padding-right: 15px;
+  padding-right: 10px;
   margin-right: 5px;
 }
 
 #memory {
   color: #94e2d5;
   border-radius: 20px 0px 0px 20px;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 #cpu {
@@ -144,12 +144,11 @@ window#waybar.empty #window {
 #battery {
   color: #a6e3a1;
   border-radius: 0px 20px 20px 0px;
-  padding-right: 15px;
-  margin-right: 5px;
+  padding-right: 10px;
 }
 
 #tray {
-  margin: 0px 10px;
+  margin: 0px 5px;
   padding: 0px 10px;
   border: 1px solid #cba6f7;
 }
@@ -160,11 +159,11 @@ window#waybar.empty #window {
 
 #power-profiles-daemon {
   border-radius: 20px 0px 0px 20px;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 #custom-power {
   margin-right: 10px;
   border-radius: 0px 20px 20px 0px;
-  padding-right: 15px;
+  padding-right: 10px;
 }

@@ -113,7 +113,7 @@
         "tooltip": false
     },
     "tray": {
-        "icon-size": 24
+        "icon-size": 20
     },
     "power-profiles-daemon": {
         "format": "{icon}",
