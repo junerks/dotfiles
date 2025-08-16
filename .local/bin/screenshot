@@ -1,0 +1,12 @@
+#!/bin/bash
+
+output_dir="$HOME/Pictures/Screenshots"
+mkdir -p "$output_dir"
+
+filename="screenshot_$(date +%Y-%m-%d_%H-%M-%S).png"
+path="$output_dir/$filename"
+
+if grim -g "$(slurp)" "$path"; then
+    wl-copy < "$path"
+    notify-send -i "$path" "Screenshot Saved" "Image saved at $path and copied to the clipboard"
+fi
