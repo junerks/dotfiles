@@ -19,7 +19,7 @@ function y() {
 }
 
 export PATH=$PATH:"$HOME/.local/bin"
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # Plugins

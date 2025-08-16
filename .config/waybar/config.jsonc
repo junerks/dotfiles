@@ -1,5 +1,5 @@
 {
-    "layer": "top",
+    "layer": "bot",
     "output": [
         "eDP-1",
         "HDMI-A-1"
@@ -100,15 +100,15 @@
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "󰂃",
+            "󰁻",
+            "󰁾",
+            "󰂀",
+            "󰁹"
         ],
         "tooltip": false
     },

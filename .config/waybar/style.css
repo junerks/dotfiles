@@ -142,13 +142,14 @@ window#waybar.empty #window {
 }
 
 #battery {
+  margin-right: 5px;
   color: #a6e3a1;
   border-radius: 0px 20px 20px 0px;
   padding-right: 10px;
 }
 
 #tray {
-  margin: 0px 5px;
+  margin-right: 5px;
   padding: 0px 10px;
   border: 1px solid #cba6f7;
 }
