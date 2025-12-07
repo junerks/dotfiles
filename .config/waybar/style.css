@@ -28,7 +28,6 @@ tooltip {
 #tray,
 #power-profiles-daemon,
 #language,
-#custom-night-mode,
 #custom-power {
   background-color: rgba(30, 30, 46, 0.8);
 }
@@ -85,7 +84,6 @@ window#waybar.empty #window {
 #battery,
 #power-profiles-daemon,
 #language,
-#custom-night-mode,
 #custom-power {
   border-radius: 0px;
   padding: 0px 10px;

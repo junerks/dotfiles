@@ -1,9 +1,9 @@
 #!/bin/bash
 
-CHOSEN=$(printf "Lock\nSuspend\nReboot\nShutdown\nLog Out" | rofi -dmenu -i)
+CHOSEN=$(printf "Lock\nSuspend\nReboot\nShutdown\nLog Out" | rofi -dmenu)
 
 case "$CHOSEN" in
-	#"Lock") lockscreen ;;
+	"Lock") hyprlock ;;
 	#"Suspend") systemctl suspend-then-hibernate ;;
 	"Reboot") reboot ;;
 	"Shutdown") poweroff ;;

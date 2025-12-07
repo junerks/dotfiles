@@ -82,67 +82,25 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			local lspconfig = require("lspconfig")
+			vim.lsp.enable("lua_ls")
 
-			lspconfig.lua_ls.setup({
-				capabilities = capabilites,
-			})
-			lspconfig.omnisharp.setup({
-				cmd = { "Omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
-				root_dir = lspconfig.util.root_pattern("*.csproj", "*.sln"),
-				settings = {
-					FormattingOptions = {
-						EnableEditorConfigSupport = true,
-					},
-					Sdk = {
-						IncludePrereleases = true,
-					},
-				},
-				capabilities = capabilities,
-			})
-			lspconfig.clangd.setup({
-				capabilities = capabilites,
-			})
-			lspconfig.pyright.setup({
-				capabilities = capabilites,
-			})
-			lspconfig.html.setup({
-				capabilities = capabilites,
-			})
-			lspconfig.cssls.setup({
-				capabilities = capabilites,
-			})
-			lspconfig.ts_ls.setup({
-				capabilities = capabilites,
-			})
-			lspconfig.jsonls.setup({
-				capabilities = capabilites,
-			})
-			lspconfig.angularls.setup({
-				cmd = {
-					"/home/edgar/.local/share/nvim/mason/bin/ngserver",
-					"--stdio",
-					"--tsProbeLocations",
-					"/home/edgar/dev/web/strapi-solvex/frontend/node_modules",
-					"--ngProbeLocations",
-					"/home/edgar/dev/web/strapi-solvex/frontend/node_modules",
-				},
-				on_new_config = function(new_config, new_root_dir)
-					local nm = new_root_dir .. "/node_modules"
-					new_config.cmd = {
-						"/home/edgar/.local/share/nvim/mason/bin/ngserver",
-						"--stdio",
-						"--tsProbeLocations",
-						nm,
-						"--ngProbeLocations",
-						nm,
-					}
-				end,
-				root_dir = lspconfig.util.root_pattern("angular.json", "project.json"),
-			})
-			lspconfig.gdscript.setup({
-				capabilities = capabilites,
-			})
+			vim.lsp.enable("omnisharp")
+
+			vim.lsp.enable("clangd")
+
+			vim.lsp.enable("pyright")
+
+			vim.lsp.enable("html")
+
+			vim.lsp.enable("cssls")
+
+			vim.lsp.enable("ts_ls")
+
+			vim.lsp.enable("jsonls")
+
+			vim.lsp.enable("angularls")
+
+			vim.lsp.enable("gdscript")
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})

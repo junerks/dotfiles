@@ -1,3 +1,4 @@
+# zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -10,6 +11,7 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
+# yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
@@ -70,7 +72,6 @@ eval "$(oh-my-posh init zsh --config ~/.theme.omp.toml)"
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 fastfetch
-
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)

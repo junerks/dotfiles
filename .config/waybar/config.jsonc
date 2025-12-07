@@ -24,7 +24,6 @@
         "tray",
         "power-profiles-daemon",
         "hyprland/language",
-        "custom/night-mode",
         "custom/power"
     ],
     "hyprland/workspaces": {
@@ -131,10 +130,6 @@
         "format-en": "EN",
         "format-es": "ES",
         "on-click": "hyprctl switchxkblayout all next"
-    },
-    "custom/night-mode": {
-        "format": "",
-        "tooltip": false
     },
     "custom/power": {
         "format": "⏻",
