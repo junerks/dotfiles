@@ -1,8 +1,8 @@
 {
     "layer": "bot",
     "output": [
+        "DP-2",
         "eDP-1",
-        "HDMI-A-1"
     ],
     "position": "top",
     "margin-top": 5,
@@ -41,9 +41,10 @@
             "8": "八",
             "9": "九",
             "10": "十"
-        },
+        }
     },
     "hyprland/window": {
+        "separate-outputs": true,
         "format": "{title}",
         "icon": true
     },
@@ -76,12 +77,12 @@
         "tooltip-format-wifi": "{essid}\n{bandwidthDownBits}",
         "format-ethernet": " {bandwidthDownBits}",
         "format-disconnected": "Disconnected ",
-        "on-click": "kitty nmtui"
+        "on-click": "ghostty nmtui"
     },
     "backlight": {
         "format": "{icon} {percent}%",
         "format-icons": "󰖨",
-        "on-click": "~/.local/bin/toggle-night-mode",
+        "on-click": "~/.local/bin/night-mode",
         "scroll-step": 5
     },
     "memory": {

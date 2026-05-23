@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if pgrep wlsunset &> /dev/null; then
+    killall wlsunset &> /dev/null;
+fi
+
+if [ $# -eq 1 ]; then
+    templow=$1
+    temphigh=$(( $1 + 1))
+    wlsunset -t $templow -T $temphigh &> /dev/null & 
+else
+    killall wlsunset &> /dev/null;
+fi
