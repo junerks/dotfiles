@@ -36,8 +36,8 @@ for i = 1, 7 do
 	hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
 end
 
-hl.bind(mainMod .. " + backslash", hl.dsp.workspace.toggle_special("hidden1"))
-hl.bind(mainMod .. " + SHIFT + backslash", hl.dsp.window.move({ workspace = "special:hidden1" }))
+hl.bind(mainMod .. " + slash", hl.dsp.workspace.toggle_special("hidden1"))
+hl.bind(mainMod .. " + SHIFT + slash", hl.dsp.window.move({ workspace = "special:hidden1" }))
 
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
