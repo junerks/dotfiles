@@ -13,6 +13,7 @@ return {
 
 				-- c
 				"clang-format",
+				"cmakelang",
 
 				-- web dev
 				"eslint_d",
@@ -61,6 +62,7 @@ return {
 
 				-- c
 				"clangd",
+				"neocmake",
 
 				-- python
 				"pyright",
@@ -87,6 +89,7 @@ return {
 			vim.lsp.enable("omnisharp")
 
 			vim.lsp.enable("clangd")
+			vim.lsp.enable("neocmake")
 
 			vim.lsp.enable("pyright")
 

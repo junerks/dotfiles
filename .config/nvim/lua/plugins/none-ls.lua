@@ -24,6 +24,8 @@ return {
 
 				-- C/C++
 				null_ls.builtins.formatting.clang_format,
+				null_ls.builtins.formatting.cmake_format,
+				null_ls.builtins.diagnostics.cmake_lint,
 
 				-- Web
 				require("none-ls.code_actions.eslint_d"),

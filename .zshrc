@@ -23,6 +23,11 @@ function y() {
 export PATH=$PATH:"$HOME/.local/bin"
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=/opt/devkitpro/devkitARM
+export DEVKITPPC=/opt/devkitpro/devkitPPC
+export PATH=$PATH:"$DEVKITARM/bin"
+export PATH=$PATH:"$DEVKITPRO/tools/bin"
 
 # Plugins
 zinit light zsh-users/zsh-syntax-highlighting
