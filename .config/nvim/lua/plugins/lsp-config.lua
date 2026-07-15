@@ -6,6 +6,9 @@ return {
 				-- lua
 				"stylua",
 
+				-- c#
+				"csharpier",
+
 				-- python
 				"mypy",
 				"black",
@@ -18,9 +21,6 @@ return {
 				-- web dev
 				"eslint_d",
 				"prettier",
-
-				-- c#
-				"csharpier",
 
 				-- gdscript
 				"gdtoolkit",
@@ -58,7 +58,7 @@ return {
 				"lua_ls",
 
 				-- c#
-				"omnisharp",
+				"csharp_ls",
 
 				-- c
 				"clangd",
@@ -86,7 +86,7 @@ return {
 
 			vim.lsp.enable("lua_ls")
 
-			vim.lsp.enable("omnisharp")
+			vim.lsp.enable("csharp_ls")
 
 			vim.lsp.enable("clangd")
 			vim.lsp.enable("neocmake")

@@ -13,6 +13,8 @@ return {
 				-- Lua
 				null_ls.builtins.formatting.stylua,
 
+				null_ls.builtins.formatting.csharpier,
+
 				-- Python
 				null_ls.builtins.diagnostics.mypy,
 
