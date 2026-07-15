@@ -8,7 +8,7 @@ local vars = {
 	windowSwitcherCmd = "rofi -show window",
 	colorpicker = "hyprpicker",
 	colorpickerCmd = "hyprpicker -a -f hex",
-	wallpaper = "~/Pictures/wallpapers/astronaut.png",
+	wallpaper = "~/Pictures/wallpapers/gojo.png",
 }
 
 return vars
