@@ -28,6 +28,7 @@ export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
 export PATH=$PATH:"$DEVKITARM/bin"
 export PATH=$PATH:"$DEVKITPRO/tools/bin"
+export PATH=$PATH:"$HOME/.dotnet/tools"
 
 # Plugins
 zinit light zsh-users/zsh-syntax-highlighting
