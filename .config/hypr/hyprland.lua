@@ -27,7 +27,3 @@ require("edgar.layout")
 require("edgar.input")
 require("edgar.keybinds")
 require("edgar.rules")
-
-hl.on("hyprland.start", function()
-	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-end)
